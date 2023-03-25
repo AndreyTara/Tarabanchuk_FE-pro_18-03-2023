@@ -7,6 +7,6 @@ buttonAlert.onclick = () => {
 	let minus = `${firstNumber} - ${secondNumber} = ${firstNumber - secondNumber}`;
 	let dev = `${firstNumber} / ${secondNumber} = ${firstNumber / secondNumber}`;
 	let milti = `${firstNumber} * ${secondNumber} = ${firstNumber * secondNumber}`;
-	let rezult = [`\u{25CF} ${sum} 	\n`, `\u{25CF} ${minus} 	\n`, `\u{25CF} ${dev}  	\n`, `\u{25CF} ${milti}`];
+	let rezult = [`\u{25CF} ${sum}`, ` \n\u{25CF} ${minus} `, ` \n\u{25CF} ${dev} `, ` \n\u{25CF} ${milti}`];
 	alert(rezult.join(''));
 }
