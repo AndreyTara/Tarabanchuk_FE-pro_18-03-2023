@@ -17,7 +17,7 @@ buttonAlert.onclick = () => {
 	const firstStr = (prompt('Input first string.') || emptyStr);
 	const secondStr = (prompt('Input second string.') || emptyStr);
 	const thirdStr = (prompt('Input third string.') || emptyStr);
-	rezult = '/first - '.concat(firstStr, '/second - ', secondStr, '****  /third - ', thirdStr);
+	rezult = '/first - '.concat(firstStr, '/second - ', secondStr, '/third - ', thirdStr);
 	alert(rezult);
 }
 
