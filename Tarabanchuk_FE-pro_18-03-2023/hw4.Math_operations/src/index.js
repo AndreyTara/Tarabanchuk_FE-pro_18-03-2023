@@ -1,16 +1,12 @@
-
 const buttonAlert = document.getElementById("add-info-alert");
 
 buttonAlert.onclick = () => {
-	let rezult;
-	const firstNumberInput = +prompt('Input first number.');
-	const secondNumberinput = +prompt('Input second number.');
-	if (!!firstNumberInput) {
-		const firstNumber = firstNumberInput;
-	}
-	if (!!secondNumberInput) {
-		const secondNumber = secondNumberInput;
-	}
-	rezult = `${firstNumber} + ${secondNumber} = ${firstNumber + secondNumber}`;
-	alert(rezult);
+	const firstNumber = +prompt('Input first number.');
+	const secondNumber = +prompt('Input second number.');
+	let sum = `${firstNumber} + ${secondNumber} = ${firstNumber + secondNumber}`;
+	let minus = `${firstNumber} - ${secondNumber} = ${firstNumber - secondNumber}`;
+	let dev = `${firstNumber} / ${secondNumber} = ${firstNumber / secondNumber}`;
+	let milti = `${firstNumber} * ${secondNumber} = ${firstNumber * secondNumber}`;
+	let rezult = [`\u{25CF} ${sum} 	\n`, `\u{25CF} ${minus} 	\n`, `\u{25CF} ${dev}  	\n`, `\u{25CF} ${milti}`];
+	alert(rezult.join(''));
 }
