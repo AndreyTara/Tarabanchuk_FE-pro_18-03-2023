@@ -1,0 +1,16 @@
+{
+	"name": "third-homework",
+	"version": "1.0.0",
+	"main": "index.html",
+	"scripts": {
+		"start": "index.html --open",
+		"clisk": "click button to get result"
+	},
+	"author": "Andrii Tarabancuk",
+	"license": "ISC",
+	"repository": {
+		"type": "git",
+		"url": "Tarabanchuk_fe-pro_18-03-2023/hw3.Number&Rows"
+	},
+	"description": ""
+}
