@@ -20,9 +20,5 @@ buttonAlert.onclick = () => {
 			break
 		default:
 			alert('You have not selected a calculation');
-		// let sub = `${firstNumber} - ${secondNumber} = ${firstNumber - secondNumber}`;
-		// let div = `${firstNumber} / ${secondNumber} = ${firstNumber / secondNumber}`;
-		// let milt = `${firstNumber} * ${secondNumber} = ${firstNumber * secondNumber}`;
-		// let result = [` ${add}`, ` \n ${sub} `, ` \n ${div} `, ` \n ${milt}`];
 	}
 }
