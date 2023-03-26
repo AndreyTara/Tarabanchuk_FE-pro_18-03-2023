@@ -10,13 +10,7 @@ buttonAlert.onclick = () => {
 		alert('One or both is not a number.')
 		return
 	}
-	const calcMap = {
-		add: '+',
-		sub: '-',
-		div: '/',
-		mul: '*'
-	}
-	
+
 	let add = `${firstNumber} + ${secondNumber} = ${+firstNumber + +secondNumber}`;
 	let sub = `${firstNumber} - ${secondNumber} = ${+firstNumber - +secondNumber}`;
 	let div = `${firstNumber} / ${secondNumber} = ${+firstNumber / +secondNumber}`;
