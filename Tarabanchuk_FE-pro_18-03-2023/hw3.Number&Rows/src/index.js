@@ -24,7 +24,7 @@ buttonAlert.onclick = () => {
 buttonDigit.onclick = () => {
 	let rezult;
 	const firstStr = (prompt('Input five-digit number.') || emptyNumber);
-	rezult = firstNumber.split('').join(' ')
+	rezult = firstStr.split('').join(' ')
 	console.log(rezult);
 }
 
