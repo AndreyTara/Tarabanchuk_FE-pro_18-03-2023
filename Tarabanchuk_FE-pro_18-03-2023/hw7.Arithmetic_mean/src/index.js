@@ -11,7 +11,7 @@ buttonAlert.onclick = () => {
 	const isThirdANumber = !isNaN(thirdStr) && !isNaN(parseFloat(thirdStr));
 	const is3Number = isFirstANumber && isSecondANumber && isThirdANumber
 	let calcMiddle = 0;
-		if (is3Number === true) {
+	if (is3Number === true) {
 		calcMiddle = (+firstStr + +secondStr + +thirdStr) / 3;
 	} else {
 		console.log(wrongMessage);
