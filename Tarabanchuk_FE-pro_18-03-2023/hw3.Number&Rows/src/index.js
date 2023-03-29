@@ -2,7 +2,7 @@ const buttonConsole = document.getElementById("add-info-console");
 const buttonAlert = document.getElementById("add-info-alert");
 const buttonDigit = document.getElementById("add-info-digit");
 let emptyStr = ' empty string ';
-let emptyNumber = 22445;
+// let emptyNumber = 22445;
 
 buttonConsole.onclick = () => {
 	const firstStr = (prompt('Input first string.') || emptyStr);
@@ -22,9 +22,22 @@ buttonAlert.onclick = () => {
 }
 
 buttonDigit.onclick = () => {
-	let rezult;
-	const firstStr = (prompt('Input five-digit number.') || emptyNumber);
-	rezult = firstStr.split('').join(' ')
-	console.log(rezult);
+	const wrongMessage = 'Incorrect input - string is not a number';
+	const first = prompt('Input five-digit number');
+	const isFirstANumber = !isNaN(first) && !isNaN(parseFloat(first));
+	let result = '';
+
+	if (isFirstANumber === true) {
+		console.log()
+		if (+first > 9999 && +first < 100000) {
+			result = first;
+		} else {
+			result = 'Number out of range--';
+		}
+	} else {
+		console.log(wrongMessage);
+		return
+	}
+	console.log(result.split('').join(' '));
 }
 
