@@ -1,6 +1,6 @@
-const buttonAlert = document.getElementById("add-info-alert");
+const buttonConsole = document.getElementById("add-info-console");
 
-buttonAlert.onclick = () => {
+buttonConsole.onclick = () => {
 	// Написати цикли, які зможуть:
 
 	//1  Вивести на сторінку в один рядок через кому числа від 10 до 20.
