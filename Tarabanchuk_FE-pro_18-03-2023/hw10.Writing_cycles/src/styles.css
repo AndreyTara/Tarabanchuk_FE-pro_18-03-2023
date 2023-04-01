@@ -1,5 +1,8 @@
-button {
-	margin: 10px
+li, button {
+	margin: 10px;
+	font-size: 20px;
+	color: grey;
 }
+
 
 /*# sourceMappingURL=index.css.map */
