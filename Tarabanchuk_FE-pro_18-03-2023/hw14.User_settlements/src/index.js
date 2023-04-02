@@ -69,15 +69,15 @@ const arrayBalance = [];
 const arrayPhone = [];
 for (let i = 0; i < users.length; i++) {
 	arrayBalance[i] = users[i]['balance'];
-	arrayPhone[i] = users[i]['phone']
+	arrayPhone[i] = users[i]['phone'];
 }
 const arrayBalance11 = [...arrayBalance];
 const filterValueBalance = [];
 const tempFilterValue = [];
 const resultFilterBalance = [];
 for (let i = 0; i < arrayBalance11.length; i++) {
-	tempFilterValue[i] = [...arrayBalance11[i]]
-	filterValueBalance[i] = +(tempFilterValue[i].filter(delSumbol)).join('')
+	tempFilterValue[i] = [...arrayBalance11[i]];
+	filterValueBalance[i] = +(tempFilterValue[i].filter(delSumbol)).join('');
 }
 
 const buttonTask1 = document.getElementById("task1");
@@ -95,6 +95,6 @@ buttonTask1.onclick = () => {
 
 const buttonTask2 = document.getElementById("task2");
 buttonTask2.onclick = () => {
-	const sumBalanseUsers = (filterValueBalance.reduce((total, amoung) => (total + amoung))).toFixed(2)
+	const sumBalanseUsers = (filterValueBalance.reduce((total, amoung) => (total + amoung))).toFixed(2);
 	console.log(sumBalanseUsers);
 }
