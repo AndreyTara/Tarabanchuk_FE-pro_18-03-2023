@@ -91,7 +91,7 @@ buttonTask10.onclick = () => {
 	const sortArray = [...array].sort(sortFunction);
 	const maxElement = sortArray[array.length - 1];
 	const maxElementIndex = array.findIndex((x) => x === sortArray[array.length - 1]);
-	const newArray = new Array(array.length).fill(0)w
+	const newArray = new Array(array.length).fill(0);
 	newArray[maxElementIndex] = maxElement;
 	console.log('array', array);
 	console.log('newAarray', newArray);
