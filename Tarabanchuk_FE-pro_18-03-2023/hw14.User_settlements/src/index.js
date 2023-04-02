@@ -54,43 +54,47 @@ const users = [
 		"address": "314 Dunne Place, Bawcomville, Guam, 9053"
 	}
 ]
-// Дан масив об'єктів. 
-// 1 Вивести масив телефонних номерів користувачів, у яких баланс більше 2000 доларів. 
-// 2 І знайти суму всіх балансів користувачів
+
+const delSumbol = (value) => {
+	if (value === '$') {
+		return false;
+	}
+	if (value === ',') {
+		return false;
+	}
+	return true;
+}
+
 const arrayBalance = [];
-for (let i = 0; i < users.length; i++){
-	arrayBalance[i] =  users[i]['balance'] ;
+const arrayPhone = [];
+for (let i = 0; i < users.length; i++) {
+	arrayBalance[i] = users[i]['balance'];
+	arrayPhone[i] = users[i]['phone']
 }
-const arrayBalance11=[...arrayBalance];
-let sum = 0;
-let arrayIndex1=[]; 
-let arrayIndex3=[]; 
-let intArrayBalanse=[];
-for (let i = 0; i <arrayBalance11.length; i++){
-	let arrayIndex1[i] = arrayBalance11[i].slice(1,2);
-	let arrayIndex3[i] = arrayBalance11[i].slice(3,10);
-	console.log(arrayIndex1[i]);
-	console.log(arrayIndex3[i]);
-	intArrayBalanse[i] = [...arrayIndex1[i], ...arrayIndex3[i]] ;
-	console.log(intArrayBalanse[i]);
+const arrayBalance11 = [...arrayBalance];
+const filterValueBalance = [];
+const tempFilterValue = [];
+const resultFilterBalance = [];
+for (let i = 0; i < arrayBalance11.length; i++) {
+	tempFilterValue[i] = [...arrayBalance11[i]]
+	filterValueBalance[i] = +(tempFilterValue[i].filter(delSumbol)).join('')
 }
-// console.log(arrayBalance11);
 
-	// let arrayIndex4[i] 
-	// let arrayIndex[i]
-// 	arrayBalance11[i]= +[...[...[...arrayBalance11[i]].fill('',0,1)].fill('',2,3)].join('');
-// console.log(arrayBalance11[i]);
-// 	if ((arrayBalance11[i])>2000) {
-// 	}
-// 	sum +=arrayBalance11[i];
-// console.log(sum);
+const buttonTask1 = document.getElementById("task1");
+buttonTask1.onclick = () => {
+	const filterValuePhone = [];
+	let indexFilterValuePhone = 0;
+	for (let i = 0; i < arrayBalance11.length; i++) {
+		if (filterValueBalance[i] > 2000) {
+			filterValuePhone[indexFilterValuePhone] = arrayPhone[i];
+			indexFilterValuePhone++;
+		}
+	}
+	console.log(filterValuePhone);
+}
 
-	// const arrayBalanceUsers = users.reduce((total, amoung, index, array) => {
-	// 	// array[index].phone 
-	// 	// arrayBalance[index] = array[index].phone 
-	// 	console.log(array[index].index);
-	// }
-	// )
-// console.log(' users', users)
-// console.log('arrayBalance', arrayBalance)
-// console.log(users[0].index)
+const buttonTask2 = document.getElementById("task2");
+buttonTask2.onclick = () => {
+	const sumBalanseUsers = (filterValueBalance.reduce((total, amoung) => (total + amoung))).toFixed(2)
+	console.log(sumBalanseUsers);
+}
