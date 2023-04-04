@@ -67,34 +67,28 @@ const delSumbol = (value) => {
 
 const arrayBalance = [];
 const arrayPhone = [];
-for (let i = 0; i < users.length; i++) {
-	arrayBalance[i] = users[i]['balance'];
-	arrayPhone[i] = users[i]['phone'];
-}
-const arrayBalance11 = [...arrayBalance];
+users.forEach((elem, index, array) => {
+	arrayBalance.push(array[index].balance);
+	arrayPhone.push(array[index].phone);
+});
 const filterValueBalance = [];
-const tempFilterValue = [];
-const resultFilterBalance = [];
-for (let i = 0; i < arrayBalance11.length; i++) {
-	tempFilterValue[i] = [...arrayBalance11[i]];
-	filterValueBalance[i] = +(tempFilterValue[i].filter(delSumbol)).join('');
-}
 
+arrayBalance.forEach((element, index, array) => {
+	filterValueBalance.push(array[index].slice(1, -7) + array[index].slice(-6));
+});
 const buttonTask1 = document.getElementById("task1");
 buttonTask1.onclick = () => {
-	const filterValuePhone = [];
-	let indexFilterValuePhone = 0;
-	for (let i = 0; i < arrayBalance11.length; i++) {
-		if (filterValueBalance[i] > 2000) {
-			filterValuePhone[indexFilterValuePhone] = arrayPhone[i];
-			indexFilterValuePhone++;
+	const arrayPhoneInfo = [];
+	arrayBalance.forEach((element, index, array) => {
+		if (+filterValueBalance[index] > 2000) {
+			arrayPhoneInfo.push(arrayPhone[index])
 		}
-	}
-	console.log(filterValuePhone);
+	});
+	console.log(arrayPhoneInfo)
 }
 
 const buttonTask2 = document.getElementById("task2");
 buttonTask2.onclick = () => {
-	const sumBalanseUsers = (filterValueBalance.reduce((total, amoung) => (total + amoung))).toFixed(2);
+	const sumBalanseUsers = (filterValueBalance.reduce((accumulator, currenValue) => (+accumulator + +currenValue))).toFixed(2);
 	console.log(sumBalanseUsers);
 }
