@@ -1,5 +1,5 @@
 {
-	"name": "fourteenth-homework",
+	"name": "fifteenth-homework",
 	"version": "1.0.0",
 	"main": "index.html",
 	"scripts": {
@@ -10,7 +10,7 @@
 	"license": "ISC",
 	"repository": {
 		"type": "git",
-		"url": "Tarabanchuk_fe-pro_18-03-2023/hw14.User_settlements"
+		"url": "Tarabanchuk_fe-pro_18-03-2023/hw15.Implement_function"
 	},
 	"description": ""
 }
