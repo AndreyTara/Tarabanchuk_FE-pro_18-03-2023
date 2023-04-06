@@ -9,22 +9,3 @@ function generateKey(lenString, characters) {
 }
 const key = generateKey(16, characters);
 console.log(key); // eg599gb60q926j8i
-
-
-
-
-
-
-
-// asd = characters.split('')
-	// // console.log(asd)
-	// asd.forEach((value, index, array) => {
-	// 	rendomIndexElement = Math.floor(Math.random() * characters.length);
-	// 	console.log(rendomIndexElement);
-	// 	if (randomString.length < lenString) {
-	// 		randomString += characters.substring(rendomIndexElement, rendomIndexElement + 1);
-	// 	}
-	// 	// randomString.push(characters.filter((value) => value > rendomIndexElement))
-	// })
-	// randomString.push(characters.filter((value) => value > ))
-	// const sumFiltPlus = aFiltPlus.reduce((total, amoung) => (total + amoung))
