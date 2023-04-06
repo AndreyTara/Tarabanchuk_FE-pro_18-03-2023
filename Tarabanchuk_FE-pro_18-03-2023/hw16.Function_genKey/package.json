@@ -1,0 +1,15 @@
+{
+	"name": "sixteenth-homework",
+	"version": "1.0.0",
+	"main": "index.html",
+	"scripts": {
+		"start": "index.html --open, result in console"
+	},
+	"author": "Andrii Tarabancuk",
+	"license": "ISC",
+	"repository": {
+		"type": "git",
+		"url": "Tarabanchuk_fe-pro_18-03-2023/hw16.Function_genKey"
+	},
+	"description": ""
+}
