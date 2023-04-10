@@ -1,0 +1,16 @@
+{
+	"name": "seventeenth-homework",
+	"version": "1.0.0",
+	"main": "index.html",
+	"scripts": {
+		"start": "index.html --open",
+		"click": "click the button for results"
+	},
+	"author": "Andrii Tarabancuk",
+	"license": "ISC",
+	"repository": {
+		"type": "git",
+		"url": "Tarabanchuk_fe-pro_18-03-2023/hw17.Function_otherFun"
+	},
+	"description": ""
+}
