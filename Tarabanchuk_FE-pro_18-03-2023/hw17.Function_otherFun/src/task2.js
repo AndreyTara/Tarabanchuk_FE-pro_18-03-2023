@@ -31,7 +31,7 @@ buttonTask2.onclick = () => {
 	const isYNumber = !isNaN(yStr) && !isNaN(parseFloat(yStr));
 	const isSignValid = arraySign.findIndex((value) => value === signStr) !== -1;
 	if (!isXNumber === true) return console.log(wrongMassageX);
-	if (!isYNumber === true) return console.log(wrongMassageY);
+	if (!isYNumber && yStr == '0') return console.log(wrongMassageY);
 	if (!isSignValid) return console.log(wrongMassageSign);
 
 	arraySign1 = [{ '+': fnAdd(+xStr, +yStr) },
@@ -52,7 +52,6 @@ buttonTask2.onclick = () => {
 				}
 			}
 		})
-		console.log(`${x} ${znak} ${y} = ${result}`);
 	}
 	const asd = doMath(xStr, yStr, signStr);
 	console.log(asd);
