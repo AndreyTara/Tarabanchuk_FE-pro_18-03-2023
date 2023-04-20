@@ -1,59 +1,61 @@
 
-const buttonTask2 = document.getElementById("task2");
-buttonTask2.onclick = () => {
-	const wrongMassageX = 'Incorrect input x'
-	const wrongMassageY = 'Incorrect input y'
-	const wrongMassageSign = 'Incorrect input sign'
-	function fnAdd(x, y) {
-		return x + y;
-	}
-	function fnDevi(x, y) {
-		return x - y;
-	}
-	function fnMilti(x, y) {
-		return x * y;
-	}
-	function fnDiv(x, y) {
-		return x / y;
-	}
-	function fnMod(x, y) {
-		return x % y;
-	}
-	function fnExp(x, y) {
-		return x ** y;
-	}
-	const arraySign = ['+', '-', '*', '/', '%', '^'];
+const buttonTask1 = document.getElementById("task1");
+buttonTask1.onclick = () => {
+const xStr = prompt('Enter first number.');
+const yStr = prompt('Enter second number.');
+const signStr = prompt('Enter math sign(+ , - , * , / , % , ^ )');
+const wrongMassageX = 'Incorrect input x';
+const wrongMassageY = 'Incorrect input y';
+const wrongMassageSign = 'Incorrect input sign';
+const wrongMassage = 'Invalin input';
 
-	const xStr = prompt('Enter first number.');
-	const yStr = prompt('Enter second number.');
-	const signStr = prompt('Enter math sign(+,-,*,/,%,^)');
-	const isXNumber = !isNaN(xStr) && !isNaN(parseFloat(xStr));
-	const isYNumber = !isNaN(yStr) && !isNaN(parseFloat(yStr));
-	const isSignValid = arraySign.findIndex((value) => value === signStr) !== -1;
-	if (!isXNumber === true) return console.log(wrongMassageX);
-	if (!isYNumber === true) return console.log(wrongMassageY);
-	if (!isSignValid) return console.log(wrongMassageSign);
+if (isNaN(xStr)) { return alert(wrongMassageX) };
+if (isNaN(yStr)) { return alert(wrongMassageY) };
+const x = +xStr;
+const y = +yStr;
+const znak = signStr;
+if ((signStr === '/') && (y === 0)) { return alert('На нуль ділити не можна') };
+if ((signStr === '%') && (y === 0)) { return alert('На нуль ділити не можна') };
 
-	arraySign1 = [{ '+': fnAdd(+xStr, +yStr) },
-	{ '-': fnDevi(+xStr, +yStr) },
-	{ '*': fnMilti(+xStr, +yStr) },
-	{ '/': fnDiv(+xStr, +yStr) },
-	{ '%': fnMod(+xStr, +yStr) },
-	{ '^': fnExp(+xStr, +yStr) },
+function doMath(x, y, znak) {
+	arraySign = [{ sign: '+', funct: x + y },
+	{ sign: '-', funct: x - y },
+	{ sign: '*', funct: x * y },
+	{ sign: '/', funct: x / y },
+	{ sign: '%', funct: x % y },
+	{ sign: '^', funct: x ** y },
 	];
-
-	function doMath(x, y, znak) {
-		let result = null;
-		arraySign1.forEach((value) => {
-			for (let key in value) {
-				if (key === signStr) {
-					result = value[key];
-					return result;
-				}
-			}
-		})
-		console.log(`${x} ${znak} ${y} = ${result}`);
-	}
-	const asd = doMath(xStr, yStr, signStr);
-	console.log(asd);
+	const isSignValid = arraySign.findIndex((value) => value.sign === znak) !== -1;
+	if (!isSignValid) return alert(wrongMassageSign);
+	let temp = arraySign.filter((value) => value.sign === znak);
+	const result = temp[0].funct
+	if (isNaN(result)) return alert(wrongMassage);
+	alert(`${x} ${znak} ${y} = ${result}`);
+	return result;
 }
+
+const asd = doMath(x, y, znak);
+if (asd) { return alert(asd) };
+ }
+
+// function doMathSecond(x, y, znak) {
+// 			if (znak === '+') {
+// 		return x + y
+// 	} else if (znak === '-') {
+// 		return x - y
+// 	} else if (znak === '*') {
+// 		return x * y
+// 	} else if (znak === '/') {
+// 		if (y === 0) return alert('На нуль ділити не можна.');
+// 		return x / y
+// 	} else if (znak === '%') {
+// 		if (y === 0) return alert('На нуль ділити не можна.');
+// 		return x % y
+// 	} else if (znak === '^') {
+// 		if ((x ** y === NaN)) return alert('Invalid value');
+// 		return x ** y;
+// 	} else {
+// 		alert('математична операція не обрана')
+// 	}
+
+// }
