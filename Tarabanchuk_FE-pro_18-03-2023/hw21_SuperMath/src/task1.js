@@ -13,10 +13,10 @@ buttonTask1.onclick = () => {
 			this.znak = obj.znak;
 			const askBool = confirm('Make a default calculation?')
 			if (askBool) {
-				console.log(`p.check(X:${this.x}, Y:${this.y}, znak:'${this.znak})`, this.doMath());
+				console.log(`p.check({X:${this.x}, Y:${this.y}, znak:'${this.znak}'})`, this.doMath());
 			} else {
 				let asd = this.input()
-				console.log(`p.check(X:${this.x}, Y:${this.y}, znak:'${this.znak}')`, asd);
+				console.log(`p.check({X:${this.x}, Y:${this.y}, znak:'${this.znak}'})`, asd);
 			}
 		}
 		doMath() {
@@ -41,12 +41,19 @@ buttonTask1.onclick = () => {
 			const xStr = prompt('Enter x.');
 			const yStr = prompt('Enter y.');
 			const znakStr = prompt('Enter znak.');
-			const isValidStr = !isNaN(xStr) && !isNaN(yStr) && !isNaN(znakStr);
-			if (isValidStr) return console.log(wrongInput);
-			this.x = +xStr;
-			this.y = +yStr;
-			this.znak = znakStr;
-			return this.doMath();
+			const isValidStr = (!isNaN(xStr) || !isNaN(yStr));
+			const isValidNumber = (typeof xStr === 'number' && typeof yStr === 'number');
+			if (isValidStr || isValidNumber) {
+				this.x = xStr;
+				this.y = yStr;
+				this.znak = znakStr;
+				return console.log(wrongInput);
+			} else {
+				this.x = +xStr;
+				this.y = +yStr;
+				this.znak = znakStr;
+				return this.doMath();
+			}
 		}
 	}
 	const p = new SuperMath();
