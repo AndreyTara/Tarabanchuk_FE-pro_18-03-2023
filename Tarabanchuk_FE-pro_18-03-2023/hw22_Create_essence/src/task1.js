@@ -36,7 +36,11 @@ buttonTask1.onclick = () => {
 	const person3 = new Person('Washington', 29)
 	const person4 = new Person('Kaxin', 16)
 	const person5 = new Person('Vermeer', 49)
-	console.log(person1, person2, person3, person4, person5)
+	person1.toConsolePerson()
+	person2.toConsolePerson()
+	person3.toConsolePerson()
+	person4.toConsolePerson()
+	person5.toConsolePerson()
 	const car1 = new Car('Toyota', 'Camry', 2023, 'as1234ds');
 	const car2 = new Car('Jeep', 'Grand', 2010, 'as4123ds');
 	const car3 = new Car('Ford', 'F150', 2020, 'we1254se');
