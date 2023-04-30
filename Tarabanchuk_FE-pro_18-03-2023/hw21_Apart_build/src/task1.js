@@ -10,26 +10,23 @@ buttonTask1.onclick = () => {
 			return this;
 		}
 	}
-	class Apartament {
-		constructor(numApart) {
-			this.numApart = numApart;
-			this.personAppart = [];
-		}
+	class Apartament {//flat
+		personAppart = null;
 		addApartament(person) {
 			this.personAppart.push(person);
 			return this;
 		}
 	}
-	class Building {
-		addApartMax(maxApartInBuild) {
+	class Building {//House
+		constructor(maxApartInBuild) {
 			this.maxApartInBuild = maxApartInBuild;
-			this.currentAppart = [];
+			this.personAppart = [];
 			return this;
 		}
 		addApartToBuild(appart) {
 			if ((this.currentAppart.length + 1) > this.maxApartInBuild) {
 				return console.log('Перевищення кількості кваритир у будинку');
-			};
+			}
 			this.currentAppart.push(appart);
 			return this;
 		}
@@ -46,16 +43,12 @@ buttonTask1.onclick = () => {
 	const fourtA = new Apartament('кв4');
 	const fifthA = new Apartament('кв5');
 	console.log(firstA, seconA, thirdA, fourtA, fifthA);
-	firstA.addApartament(firstP);
-	firstA.addApartament(seconP);
-	seconA.addApartament(thirdP);
-	seconA.addApartament(fourtP);
+	firstA.addApartament(firstP).addApartament(seconP);
+	seconA.addApartament(thirdP).addApartament(fourtP);
 	fifthA.addApartament(fifthP);
 	console.log(firstA);
 	const firstB = new Building();
 	firstB.addApartMax(2);
-	firstB.addApartToBuild(firstA);
-	firstB.addApartToBuild(seconA);
-	firstB.addApartToBuild(fifthA);
+	firstB.addApartToBuild(firstA).addApartToBuild(seconA).addApartToBuild(fifthA);
 	console.log(firstB);
 }
