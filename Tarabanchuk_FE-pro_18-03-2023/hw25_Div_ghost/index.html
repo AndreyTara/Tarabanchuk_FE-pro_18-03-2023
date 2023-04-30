@@ -8,7 +8,6 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="stylesheet" href="src/styles.css">
 	<title>hw25_Div_ghost</title>
-
 </head>
 
 <body>
@@ -16,37 +15,22 @@
 	<main>
 		<section>
 			<div>
-				<H2>
-					Наданий перелік завдань, при натискані на пункт результат буде у консолі
-				</H2>
-				<!-- <ol>
-					<li><button id="task1">Є текстове поле на сторінці.
+				<H3  tabindex="1">
+					Є текстове поле на сторінці.
 							<br>Під час фокусування на цьому полі збоку з'являється 'div'.
 							<br>При пропажі фокусу - 'div' так само пропадає
-							</buttom>
-					</li>
-				</ol>
-				<div id='textZone'>
-					<p>
-						Text zone for experement..
-					</p>
-				</div> -->
-
-
-				<div id="newww" class="editor2 draggable1"
-					style="position:absolute;top:100px;left:100px;border: 1px solid #aaaaaa;" onmouseover="Test(this)">
-					<p>
-						Text zone for experement..
-					</p>
-				</div>
+				</H3>
+			</div>
+			<div>
+				<p id='textZone' tabindex="2">
+					Текстове поле на сторінці для перевірки
+				</p>
 			</div>
 		</section>
 	</main>
 	<footer></footer>
 	<script src="src/task1.js">
-		function Test(e) {
-			alert(e.id);
-		}
+
 	</script>
 
 </body>
