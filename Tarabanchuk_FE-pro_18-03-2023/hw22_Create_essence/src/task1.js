@@ -1,13 +1,11 @@
 
 const buttonTask1 = document.getElementById("task1");
 buttonTask1.onclick = () => {
+	minOnerAge = 18;//@мінімальний вік власника
 	class Person {
 		constructor(name, age) {
 			this.name = name;
 			this.age = age;
-		}
-		getPerson() {
-			return this;
 		}
 		toConsolePerson() {
 			return console.log(this);
@@ -19,16 +17,22 @@ buttonTask1.onclick = () => {
 			this.model = model;                   //Suzuki Jimny 2018
 			this.releaseYear = releaseYear;       //2018
 			this.stateNum = stateNum;             //er1234we
-			this.resident = [];
+			this.resident = null;
 		}
-		addResidentCar(person) {
-			if (person.age > 18) {
-				this.resident.push(person.name);
+		addResidentCar(person) {  // SEt
+			if (person.age >= minOnerAge) {
+				this.resident.push(person.name);//this.resident.=person.name;
 				return this;
 			}
+			console.log('Людині менше 18 років')
+			return this;
 		}
 		toConsoleResCar() {
-			return console.log(this);
+			if (this.resident) {
+				return console.log(this);
+			} else {
+				console.log('У авто відсутній власник')
+			}
 		}
 	}
 	const person1 = new Person('Ivanov', 19)
