@@ -16,7 +16,6 @@ buttonTask1.onclick = () => {
 	let popPhotos = document.querySelector('#popup');
 	let newPhotos = photoObj.map(photo => {
 		const random = Math.floor(Math.random() * 9 + 1);
-		// return `<img src ='${photo}'>`;
 		return `<img src=" img/${random}.jpg" /> `;
 	}).join('')
 	popPhotos.innerHTML = newPhotos;
