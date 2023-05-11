@@ -1,0 +1,8 @@
+#wrapper {
+	font-size: 30px;
+	display: flex;
+}
+
+#wrapper>div {
+	margin: 20px;
+}
