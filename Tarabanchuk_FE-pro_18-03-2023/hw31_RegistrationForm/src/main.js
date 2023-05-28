@@ -77,7 +77,7 @@ buttonTask1.onclick = () => {
 			choiceFormRegArr.push(arrKeyText[index]);
 			choiceFormRegArr.push(choiceFormReg[value]);
 		} else {
-			return console.log('Данні не заповнені' + `${value}`);
+			return console.log('Данні не заповнені ' + `${value}`);
 		}
 	})
 	formReg.style.display = 'none';
