@@ -38,12 +38,12 @@ const startUrl = 'https://jsonplaceholder.typicode.com/';
 
 btnGetPost.addEventListener('click', () => {
 	let fullUrl = startUrl + 'posts/' + `${inputIdsh.value}`;
-	console.log(fullUrl)
 	labelUrl.innerHTML = `${fullUrl}; Id -`
 	fetch(`${fullUrl}`)
 		.then((response) => response.json())
 		.then((json) => {
 			postResponse.innerHTML = createHtmlPost(json);
+			commentPostResponse.innerHTML = '';
 			fnComment();
 		})
 		.catch((error) => { return console.log(`${fullUrl} - is ${error}`) });
@@ -59,6 +59,7 @@ post >>${ucFirst(obj.title)}
 <p>${ucFirst(obj.body)}</p>
 <span> userId -${obj.userId}; id - ${obj.id}</span>
 <button class ='getComment' id ="${obj.id}"> getComment</button>
+
 </div>`
 }
 
@@ -68,7 +69,6 @@ function ucFirst(str) {
 
 function fnComment() {
 	const buttonComment = document.querySelector('.getComment');
-	console.log(buttonComment)
 	const fullUrlComment = startUrl + 'comments/' + `${buttonComment.id}`;
 	buttonComment.addEventListener('click', () => {
 		console.log(fullUrlComment);
