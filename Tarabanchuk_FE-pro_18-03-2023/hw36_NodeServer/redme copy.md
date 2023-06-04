@@ -16,3 +16,4 @@ name: string;
 coordinate: [lat, lang] , где lat и lang - рандомоное число от 36.0000 до 37.5000,
 }
 у файл offers.txt має додаватись відправленний у POST запиті обьєкт
+
