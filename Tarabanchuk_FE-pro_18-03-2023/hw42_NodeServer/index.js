@@ -1,7 +1,7 @@
 const arrayLengthPictures = 25;
 const rangeOfCommentsMax100 = { min: 100, max: 100 }
 const rangeOfLikes = { min: 15, max: 200 };
-const rangeOfCommentsMax20 = { min: 1, max: 20 };
+const rangeOfCommentsMax20 = { min: 2, max: 20 };
 const descriptions = [
 	'Володарь', 'Верхи на драконі', 'Зникнув', 'Підтримка', 'Darth Vader', 'NLAW & чоловік', 'Зірковий корабель', 'Косміний Скафандр', 'Darth Maul', 'Кораблекрушение',
 	"Підтримка", 'Плащ', 'Авто', 'Великий двигун', 'Протигаз', 'NLAW & жінка', 'Військо', 'Потяг', 'Робот', 'Уламки заводу',
